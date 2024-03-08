@@ -3,6 +3,8 @@ package chiragtailor.tech.paymentservice.controllers;
 import chiragtailor.tech.paymentservice.dtos.CreatePaymentLinkRequestDto;
 import chiragtailor.tech.paymentservice.services.PaymentService;
 import com.razorpay.RazorpayException;
+import com.razorpay.Webhook;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,5 +24,10 @@ public class PaymentController {
 
         return link;
 
+    }
+
+    @PostMapping("/webhook")
+    public void createWebhookEvent(@RequestBody JSONObject webhook){
+        System.out.println(webhook);
     }
 }

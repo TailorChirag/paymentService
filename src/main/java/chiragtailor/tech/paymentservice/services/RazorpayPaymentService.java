@@ -42,7 +42,7 @@ public class RazorpayPaymentService implements PaymentService{
         JSONObject notes = new JSONObject();
         notes.put("orderItem","1. Macbook pro M3 ");
         paymentLinkRequest.put("notes",notes);
-        paymentLinkRequest.put("callback_url","https://chiragtailor.tech/");
+        paymentLinkRequest.put("callback_url","https://chiragtailor.tech/userservice/login");
         paymentLinkRequest.put("callback_method","get");
 
         PaymentLink payment = razorpayClient.paymentLink.create(paymentLinkRequest);
